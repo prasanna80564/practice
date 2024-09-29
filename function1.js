@@ -1,7 +1,4 @@
-function names ()
-{
-    alert("my name is prasanna")
-
+function names() {
+    alert("My name is Prasanna");
 }
-
-return names()
+names();
