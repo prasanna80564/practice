@@ -1,6 +1,6 @@
 function name ()
 {
-    console.log("my name is prasanna")
+    alert("my name is prasanna")
 
 }
 
