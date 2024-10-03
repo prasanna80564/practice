@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>Calculate Sum</h2>
+  <div id="inputArea">
+    <input type="number" id="num1" placeholder="Enter first number">
+    <input type="number" id="num2" placeholder="Enter second number">
+    <button id="calculateBtn">Calculate</button>
+  </div>
+  <div id="result"></div>
+
+  <script>
+    // Get references to DOM elements
+    const num1Input = document.getElementById('num1');
+    const num2Input = document.getElementById('num2');
+    const calculateBtn = document.getElementById('calculateBtn');
+    const resultDiv = document.getElementById('result');
+    const inputArea = document.getElementById('inputArea');
+
+    // Add event listener to button
+    calculateBtn.addEventListener('click', function() {
+      // Get values from inputs
+      const num1 = parseFloat(num1Input.value);
+      const num2 = parseFloat(num2Input.value);
+
+      // Calculate sum
+      if (!isNaN(num1) && !isNaN(num2)) {
+        const sum = num1 + num2;
+
+        // Display result
+        resultDiv.textContent = `The sum is: ${sum}`;
+
+        // Hide input fields and button
+        inputArea.classList.add('hidden');
+      } else {
+        resultDiv.textContent = 'Please enter valid numbers.';
+      }
+    });
+  </script>
+</body>
+</html>
