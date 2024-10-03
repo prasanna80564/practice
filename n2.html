@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+</head>
+<body>
+  <h2>DOM Manipulation Exercise</h2>
+  <label for="inputValue">Enter some text:</label>
+  <input type="text" id="inputValue" placeholder="Type something...">
+  <button id="changeTextBtn">Change Text</button>
+
+  <div id="resultDiv">This is the result div.</div>
+
+  <script>
+    // Get references to DOM elements
+    const inputValue = document.getElementById('inputValue');
+    const changeTextBtn = document.getElementById('changeTextBtn');
+    const resultDiv = document.getElementById('resultDiv');
+
+    // Add event listener to button
+    changeTextBtn.addEventListener('click', function() {
+      // Get the value from the input
+      const newText = inputValue.value;
+
+      // Change the content of the result div
+      resultDiv.textContent = newText ? newText : 'No input provided';
+    });
+  </script>
+</body>
+</html>
